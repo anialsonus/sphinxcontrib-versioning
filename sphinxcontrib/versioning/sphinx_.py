@@ -197,7 +197,8 @@ def _build(argv, config, versions, current_name, is_root):
         argv += ('-N',)
     if config.overflow:
         argv += config.overflow
-
+    argv += ('-D', "version={}".format(current_name))
+    print(argv)
     # Build.
     result = build_main(argv)
     if result != 0:
